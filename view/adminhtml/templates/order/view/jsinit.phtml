@@ -1,0 +1,68 @@
+<?php
+/**
+ * @var $block IWD\OrderManager\Block\Adminhtml\Order\View\Jsinit
+ */
+?>
+
+<script type="text/javascript">
+    // <![CDATA[
+    require([
+            "IWD_OrderManager/js/order/view/address/billing",
+            "IWD_OrderManager/js/order/view/address/shipping",
+            "IWD_OrderManager/js/order/view/items/items",
+            "IWD_OrderManager/js/order/view/shipping",
+            "IWD_OrderManager/js/order/view/payment",
+            "IWD_OrderManager/js/order/view/info",
+            "IWD_OrderManager/js/order/view/customer",
+            "IWD_OrderManager/js/order/view/design",
+            "prototype",
+            "Magento_Catalog/catalog/product/composite/configure"
+        ],
+        function(
+                 iwdOrderManagerAddressBilling,
+                 iwdOrderManagerAddressShipping,
+                 iwdOrderManagerItems,
+                 iwdOrderManagerShipping,
+                 iwdOrderManagerPayment,
+                 iwdOrderManagerOrderInfo,
+                 iwdOrderManagerCustomer,
+                 iwdOrderManagerDesign
+        ) {
+            var orderManagerAddressBilling = new iwdOrderManagerAddressBilling();
+            orderManagerAddressBilling.init(<?php echo $block->jsonParamsAddress(); ?>);
+
+            var orderManagerAddressShipping = new iwdOrderManagerAddressShipping();
+            orderManagerAddressShipping.init(<?php echo $block->jsonParamsAddress(); ?>);
+
+            var orderManagerAddressItems = new iwdOrderManagerItems();
+            orderManagerAddressItems.init(<?php echo $block->jsonParamsItems(); ?>);
+
+            var orderManagerShipping = new iwdOrderManagerShipping();
+            orderManagerShipping.init(<?php echo $block->jsonParamsShipping(); ?>);
+
+            var orderManagerPayment = new iwdOrderManagerPayment();
+            orderManagerPayment.init(<?php echo $block->jsonParamsPayment(); ?>);
+
+            var orderManagerOrderInfo = new iwdOrderManagerOrderInfo();
+            orderManagerOrderInfo.init(<?php echo $block->jsonParamsOrderInfo(); ?>);
+
+            var orderManagerCustomer = new iwdOrderManagerCustomer();
+            orderManagerCustomer.init(<?php echo $block->jsonParamsCustomer(); ?>);
+
+            var orderManagerDesign = new iwdOrderManagerDesign();
+            orderManagerDesign.init();
+        }
+    );
+    // ]]>
+</script>
+
+<script type="text/javascript">
+    // <![CDATA[
+    require(["IWD_OrderManager/js/upgrade"],
+        function(iwdOrderManagerUpgrade) {
+            var orderManagerUpgrade = new iwdOrderManagerUpgrade();
+            orderManagerUpgrade.init();
+        }
+    );
+    // ]]>
+</script>

@@ -1,0 +1,45 @@
+<?php
+/**
+ * @var $block \IWD\OrderManager\Block\Adminhtml\Order\Items\Form
+ */
+?>
+<div class="iwd-locked-feature admin__field">
+    <form>
+        <table class="data-table admin__table-primary iwd-om-edit-order-table">
+            <thead>
+            <tr class="headings">
+                <th class="col-product"><span><?php /* @escapeNotVerified */
+                        echo __('Product') ?></span></th>
+                <th class="col-status"><span><?php /* @escapeNotVerified */
+                        echo __('Item Status') ?></span></th>
+                <th class="col-price-original"><span><?php /* @escapeNotVerified */
+                        echo __('Original Price') ?></span></th>
+                <th class="col-price"><span><?php /* @escapeNotVerified */
+                        echo __('Price') ?></span></th>
+                <th class="col-ordered-qty"><span><?php /* @escapeNotVerified */
+                        echo __('Qty') ?></span></th>
+                <th class="col-subtotal"><span><?php /* @escapeNotVerified */
+                        echo __('Subtotal') ?></span></th>
+                <th class="col-tax-amount"><span><?php /* @escapeNotVerified */
+                        echo __('Tax Amount') ?></span></th>
+                <th class="col-tax-percent"><span><?php /* @escapeNotVerified */
+                        echo __('Tax Percent') ?></span></th>
+                <th class="col-discount"><span><?php /* @escapeNotVerified */
+                        echo __('Discount Amount') ?></span></th>
+                <th class="col-discount-percent"><span><?php /* @escapeNotVerified */
+                        echo __('Discount Percent') ?></span></th>
+                <th class="col-total"><span><?php /* @escapeNotVerified */
+                        echo __('Row Total') ?></span></th>
+                <th class="col-remove last"><span><?php /* @escapeNotVerified */
+                        echo __('Remove') ?></span></th>
+            </tr>
+            </thead>
+            <?php echo $block->getItemsForm(); ?>
+        </table>
+    </form>
+
+    <?php echo $block->getActionsForm(); ?>
+
+    <div class="iwd-lock-pro"></div>
+    <div class="iwd-unlock-pro iwd-upgrade-to-pro"><i class="fa fa-lock"></i><?php echo __('Unlock Pro') ?></div>
+</div>

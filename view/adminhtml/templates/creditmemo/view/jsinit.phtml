@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var $block IWD\OrderManager\Block\Adminhtml\Creditmemo\View\Jsinit
+ */
+?>
+
+<script type="text/javascript">
+    // <![CDATA[
+    require([
+            "IWD_OrderManager/js/creditmemo/view/info",
+            "prototype"
+        ],
+        function(iwdOrderManagerCreditmemoInfo) {
+            var orderManagerCreditmemoInfo = new iwdOrderManagerCreditmemoInfo();
+            orderManagerCreditmemoInfo.init(<?php echo $block->jsonParamsCreditmemoInfo(); ?>);
+        }
+    );
+    // ]]>
+</script>
+
+<script type="text/javascript">
+    // <![CDATA[
+    require(["IWD_OrderManager/js/upgrade"],
+        function(iwdOrderManagerUpgrade) {
+            var orderManagerUpgrade = new iwdOrderManagerUpgrade();
+            orderManagerUpgrade.init();
+        }
+    );
+    // ]]>
+</script>

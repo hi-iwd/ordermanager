@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- add method clearQuoteParams() -->
+    <preference for="Magento\Backend\Model\Session\Quote" type="IWD\OrderManager\Model\Rewrite\Session\Quote" />
+
+    <type name="Magento\Framework\Module\Manager">
+        <arguments>
+            <argument name="outputConfigPaths" xsi:type="array">
+                <item name="IWD_OrderManager" xsi:type="const">IWD\OrderManager\Helper\Data::ENABLED</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

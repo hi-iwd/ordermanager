@@ -1,0 +1,6 @@
+<?php
+    /** @var $block IWD\OrderManager\Block\Adminhtml\Order\Items\Stock\Renderer */
+    $item = $block->getItem();
+?>
+
+<div id="assign_stock_<?php echo $block->escapeHtml($item->getItemId()) ?>"></div>

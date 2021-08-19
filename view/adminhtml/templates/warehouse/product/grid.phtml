@@ -1,0 +1,859 @@
+<div class="iwd-locked-feature">
+    <div class="page-main-actions">
+        <div class="page-actions-placeholder" style=""></div>
+        <div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+            <div class="page-actions-inner" data-title="Stocks for Products">
+                <div class="page-actions-buttons">
+                    <button id="add" title="Update" type="button"
+                            class="action-default scalable add primary iwd-upgrade-to-pro" onclick="#"
+                            data-ui-id="iwd-ordermanager-warehouse-product-grid-add-button">
+                        <span>Update</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page:main-container" class="page-columns">
+        <div class="admin__old">
+            <div id="container" class="main-col">
+                <div id="messages">
+                    <div class="messages">
+                        <div class="message message-success success" style="display:none">
+                            <div data-ui-id="messages-message-success">Updated successfully.</div>
+                        </div>
+                        <div class="message message-error error" style="display:none">
+                            <div data-ui-id="messages-message-error">Error during updated process.</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="iwd_catalog_stock" data-grid-id="iwd_catalog_stock">
+                    <div class="admin__data-grid-header admin__data-grid-toolbar">
+                        <div class="admin__data-grid-header-row">
+                        </div>
+
+                        <div class="admin__data-grid-header-row ">
+                            <div class="admin__filter-actions">
+                                <button id="id_f76bc36cdd8cd7990377ed4298e221b1" title="Search" type="button"
+                                        class="action-default scalable action-secondary"
+                                        onclick="iwd_catalog_stockJsObject.doFilter()" data-action="grid-filter-apply"
+                                        data-ui-id="widget-button-4">
+                                    <span>Search</span>
+                                </button>
+                                <button id="id_cdfa30c8f6ccecbd9fe981c1cbb54dd9" title="Reset Filter" type="button"
+                                        class="action-default scalable action-reset action-tertiary"
+                                        data-action="grid-filter-reset"
+                                        data-ui-id="widget-button-3">
+                                    <span>Reset Filter</span>
+                                </button>
+                            </div>
+                            <div class="admin__control-support-text">
+                            <span id="iwd_catalog_stock-total-count" data-ui-id="grid-view-grid-total-count">
+                                2046 </span> records found
+                                <span id="iwd_catalog_stock_massaction-count" class="mass-select-info _empty">
+                                    <strong data-role="counter">0</strong> <span>selected</span>
+                                </span>
+                            </div>
+                            <div class="admin__data-grid-pager-wrap">
+                                <select name="limit" id="iwd_catalog_stock_page-limit"
+                                        onchange="iwd_catalog_stockJsObject.loadByElement(this)"
+                                        class="admin__control-select">
+                                    <option value="20" selected="selected">20
+                                    </option>
+                                    <option value="30">30
+                                    </option>
+                                    <option value="50">50
+                                    </option>
+                                    <option value="100">100
+                                    </option>
+                                    <option value="200">200
+                                    </option>
+                                </select>
+                                <label for="iwd_catalog_stockiwd_catalog_stock_page-limit"
+                                       class="admin__control-support-text">per page</label>
+
+                                <div class="admin__data-grid-pager">
+                                    <button type="button" class="action-previous disabled"><span>Previous page</span>
+                                    </button>
+                                    <input type="text" id="iwd_catalog_stock_page-current" name="page" value="1"
+                                           class="admin__control-text"
+                                           onkeypress="iwd_catalog_stockJsObject.inputPage(event, '103')"
+                                           data-ui-id="grid-view-grid-current-page">
+                                    <label class="admin__control-support-text" for="iwd_catalog_stock_page-current">
+                                        of <span>103</span> </label>
+                                    <button type="button" title="Next page" class="action-next"
+                                            onclick="iwd_catalog_stockJsObject.setPage('2');return false;">
+                                        <span>Next page</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin__data-grid-wrap admin__data-grid-wrap-static">
+                        <table class="data-grid" id="iwd_catalog_stock_table">
+                            <thead>
+                            <tr>
+                                <th data-sort="entity_id"
+                                    class="data-grid-th _sortable not-sort col-id col-entity_id"><span>ID</span></th>
+                                <th data-sort="title"
+                                    class="data-grid-th _sortable not-sort  col-title"><span>Name</span></th>
+                                <th data-sort="sku" class="data-grid-th _sortable not-sort col-sku">
+                                    <span>SKU</span></th>
+                                <th data-sort="type" class="data-grid-th _sortable not-sort  col-type">
+                                    <span>Type</span></th>
+                                <th data-sort="qty" class="data-grid-th _sortable not-sort  col-qty">
+                                    <span>Default Qty</span></th>
+                                <th data-sort="qty2" class="data-grid-th _sortable not-sort  col-qty2">
+                                    <span>Additional Stock #1</span></th>
+                                <th data-sort="qty3" class="data-grid-th _sortable not-sort  col-qty3">
+                                    <span>Additional Stock #2</span></th>
+                                <th data-sort="qty4" class="data-grid-th _sortable not-sort  col-qty4">
+                                    <span>Additional Stock #3</span></th>
+                            </tr>
+                            <tr class="data-grid-filters" data-role="filter-form">
+                                <td data-column="entity_id" class="col-id col-entity_id">
+                                    <div class="range">
+                                        <div class="range-line">
+                                            <input type="text" name="entity_id[from]"
+                                                   id="iwd_catalog_stock_grid_record_entity_id_from"
+                                                   placeholder="From" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-0-filter-entity-id-from">
+                                        </div>
+                                        <div class="range-line">
+                                            <input type="text" name="entity_id[to]"
+                                                   id="iwd_catalog_stock_grid_record_entity_id_to"
+                                                   placeholder="To" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-0-filter-entity-id-to">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-column="title" class=" col-title">
+                                    <input type="text" name="title" id="iwd_catalog_stock_grid_record_title" value=""
+                                           class="input-text admin__control-text no-changes"
+                                           data-ui-id="widget-grid-column-filter-text-0-filter-title"></td>
+                                <td data-column="sku" class=" col-sku">
+                                    <input type="text" name="sku" id="iwd_catalog_stock_grid_record_sku" value=""
+                                           class="input-text admin__control-text no-changes"
+                                           data-ui-id="widget-grid-column-filter-text-1-filter-sku"></td>
+                                <td data-column="type" class=" col-type">
+                                    <select name="type" id="iwd_catalog_stock_grid_record_type"
+                                            data-ui-id="widget-grid-column-filter-select-extended-0-filter-type"
+                                            class="no-changes admin__control-select">
+                                        <option value=""></option>
+                                        <option value="simple">Simple Product</option>
+                                        <option value="virtual">Virtual Product</option>
+                                        <option value="bundle">Bundle Product</option>
+                                        <option value="downloadable">Downloadable Product</option>
+                                        <option value="configurable">Configurable Product</option>
+                                        <option value="grouped">Grouped Product</option>
+                                    </select></td>
+                                <td data-column="qty" class=" col-qty">
+                                    <div class="range">
+                                        <div class="range-line">
+                                            <input type="text" name="qty[from]"
+                                                   id="iwd_catalog_stock_grid_record_qty_from"
+                                                   placeholder="From" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-1-filter-qty-from">
+                                        </div>
+                                        <div class="range-line">
+                                            <input type="text" name="qty[to]"
+                                                   id="iwd_catalog_stock_grid_record_qty_to"
+                                                   placeholder="To" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-1-filter-qty-to">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-column="qty2" class=" col-qty2">
+                                    <div class="range">
+                                        <div class="range-line">
+                                            <input type="text" name="qty2[from]"
+                                                   id="iwd_catalog_stock_grid_record_qty2_from"
+                                                   placeholder="From" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-2-filter-qty2-from">
+                                        </div>
+                                        <div class="range-line">
+                                            <input type="text" name="qty2[to]"
+                                                   id="iwd_catalog_stock_grid_record_qty2_to"
+                                                   placeholder="To" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-2-filter-qty2-to">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-column="qty3" class=" col-qty3">
+                                    <div class="range">
+                                        <div class="range-line">
+                                            <input type="text" name="qty3[from]"
+                                                   id="iwd_catalog_stock_grid_record_qty3_from"
+                                                   placeholder="From" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-3-filter-qty3-from">
+                                        </div>
+                                        <div class="range-line">
+                                            <input type="text" name="qty3[to]"
+                                                   id="iwd_catalog_stock_grid_record_qty3_to"
+                                                   placeholder="To" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-3-filter-qty3-to">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-column="qty4" class=" col-qty4">
+                                    <div class="range">
+                                        <div class="range-line">
+                                            <input type="text" name="qty4[from]"
+                                                   id="iwd_catalog_stock_grid_record_qty4_from"
+                                                   placeholder="From" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-4-filter-qty4-from">
+                                        </div>
+                                        <div class="range-line">
+                                            <input type="text" name="qty4[to]"
+                                                   id="iwd_catalog_stock_grid_record_qty4_to"
+                                                   placeholder="To" value=""
+                                                   class="input-text admin__control-text no-changes"
+                                                   data-ui-id="widget-grid-column-filter-range-4-filter-qty4-to">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr title="" class="even">
+                                <td class=" col-id col-entity_id col-number">
+                                    1
+                                </td>
+                                <td class=" col-title">
+                                    Joust Duffle Bag
+                                </td>
+                                <td class=" col-sku">
+                                    24-MB01
+                                </td>
+                                <td class=" col-type">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[1][1][qty]"
+                                               value="99" title="Qty" prev-value="1">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[1][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text" name="stock[1][2][qty]" value="99"
+                                               title="Qty" prev-value="99">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[1][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text" name="stock[1][3][qty]" value="99"
+                                               title="Qty" prev-value="99">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[1][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text" name="stock[1][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[1][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    2
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Strive Shoulder Pack
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-MB04
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[2][1][qty]" value="99"
+                                               title="Qty" prev-value="99">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[2][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[2][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[2][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[2][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[2][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[2][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[2][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="even">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    3
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Crown Summit Backpack
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-MB03
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[3][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[3][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[3][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[3][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[3][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[3][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[3][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[3][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    4
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Wayfarer Messenger Bag
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-MB05
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[4][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[4][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[4][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[4][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[4][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[4][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[4][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[4][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="even">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    5
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Rival Field Messenger
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-MB06
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[5][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[5][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[5][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[5][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[5][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[5][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[5][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[5][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    6
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Fusion Backpack
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-MB02
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[6][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[6][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[6][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[6][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[6][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[6][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[6][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[6][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="even">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    7
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Impulse Duffle
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-UB02
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[7][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[7][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[7][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[7][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[7][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[7][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[7][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[7][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    8
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Voyage Yoga Bag
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-WB01
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[8][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[8][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[8][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[8][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[8][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[8][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[8][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[8][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="" class="even">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    9
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Compete Track Tote
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-WB02
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[9][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[9][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[9][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[9][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[9][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[9][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[9][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[9][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr title="">
+                                <td class=" col-id col-entity_id col-number                                        ">
+                                    10
+                                </td>
+                                <td class=" col-title                                        ">
+                                    Savvy Shoulder Tote
+                                </td>
+                                <td class=" col-sku                                        ">
+                                    24-WB05
+                                </td>
+                                <td class=" col-type                                        ">
+                                    Simple Product
+                                </td>
+                                <td class=" col-qty                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty_default"
+                                               type="text" name="stock[10][1][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[10][1][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty2                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[10][2][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[10][2][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty3                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[10][3][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[10][3][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class=" col-qty4                                        ">
+                                    <div class="product-stock-cell">
+                                        <input class="product-qty input-text admin__control-text inventory_qty"
+                                               type="text"
+                                               name="stock[10][4][qty]" value="99" title="Qty">
+                                        <div class="product-in-stock" title="In Stock">
+                                            <input class="product_in_stock admin__control-checkbox" type="checkbox"
+                                                   checked="checked" name="stock[10][4][is_in_stock]" value="1">
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="iwd-lock-pro"></div>
+    <div class="iwd-unlock-pro iwd-upgrade-to-pro"><i class="fa fa-lock"></i><?php echo __('Unlock Pro') ?></div>
+</div>
+
+<script type="text/javascript">
+    // <![CDATA[
+    require(["IWD_OrderManager/js/upgrade"],
+        function(iwdOrderManagerUpgrade) {
+            var orderManagerUpgrade = new iwdOrderManagerUpgrade();
+            orderManagerUpgrade.init();
+        }
+    );
+    // ]]>
+</script>

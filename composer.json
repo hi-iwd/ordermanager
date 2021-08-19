@@ -1,0 +1,17 @@
+{
+  "name": "iwd/ordermanager",
+  "description": "IWD Order Manager",
+  "type": "magento2-module",
+  "version": "4.0.2",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "IWD\\OrderManager\\": ""
+    }
+  }
+}

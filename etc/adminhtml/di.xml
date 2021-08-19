@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Ui\Model\Export\MetadataProvider">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="iwdordermanager_order_view_log_grid" xsi:type="array">
+                    <item name="created_at" xsi:type="string">created_at</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <plugin name="iwd_om_grid_totals" type="IWD\OrderManager\Plugin\Framework\View\Element\UiComponent\DataProvider\DataProvider"/>
+    </type>
+
+    <type name="IWD\OrderManager\Ui\Component\MassAction\Status\Options">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">iwdordermanager/order_massactions/editstatus</item>
+                <item name="paramName" xsi:type="string">status</item>
+                <item name="confirm" xsi:type="array">
+                    <item name="title" xsi:type="string" translate="true">Change status</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure to change order status?</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

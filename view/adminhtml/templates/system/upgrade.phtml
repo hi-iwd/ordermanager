@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    // <![CDATA[
+    require(["jquery", "IWD_OrderManager/js/upgrade"],
+        function($, iwdOrderManagerUpgrade) {
+            var orderManagerUpgrade = new iwdOrderManagerUpgrade();
+            orderManagerUpgrade.init();
+
+            $(document).ready(function(){
+                $.each([
+                    '#iwdordermanager_order_items',
+                    '#iwdordermanager_update_reauthorize',
+                    '#iwdordermanager_multi_inventory',
+                    '#iwdordermanager_order_info',
+                    '#iwdordermanager_order_grid'
+                ], function (i, elem) {
+                    if ($('#config-edit-form .section-config ' + elem)) {
+                        $('#config-edit-form .section-config ' + elem)
+                            .addClass('iwd-locked-feature')
+                            .append(
+                                '<div class="iwd-lock-pro"></div><div class="iwd-unlock-pro iwd-upgrade-to-pro">' +
+                                '<i class="fa fa-lock"></i>Unlock Pro</div>'
+                            );
+                    }
+                });
+
+                $.each([
+                    '#row_iwdordermanager_allow_delete_invoices',
+                    '#row_iwdordermanager_allow_delete_credit_memos',
+                    '#row_iwdordermanager_allow_delete_shipments',
+                    '#row_iwdordermanager_general_auto_apply_shipping',
+                    '#row_iwdordermanager_general_enable_edit_coupon'
+                ], function (i, elem) {
+                    if ($(elem)) {
+                        $(elem).find('select').attr('disabled', 'disabled');
+                    }
+                });
+
+            });
+        }
+    );
+    // ]]>
+</script>

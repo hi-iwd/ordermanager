@@ -1,0 +1,224 @@
+<div class="iwd-locked-feature">
+    <div class="page-main-actions _hidden">
+        <div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+            <div class="page-actions-inner" data-title="Sources">
+                <div class="page-actions-buttons">
+                    <button id="add" title="Add New Source" type="button" class="action-default scalable add primary"
+                            onclick="setLocation('#')"
+                            data-ui-id="iwd-ordermanager-warehouse-source-grid-add-button">
+                        <span>Add New Source</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page:main-container" class="page-columns">
+        <div class="admin__old">
+            <div id="container" class="main-col">
+                <div id="source" data-grid-id="source">
+                    <div class="admin__data-grid-header admin__data-grid-toolbar">
+                        <div class="admin__data-grid-header-row">
+                            <div class="admin__filter-actions">
+                                <button id="id_5a84934bbf7edc19fc1af608aa38db1d" title="Search" type="button"
+                                        class="action-default scalable action-secondary"
+                                        data-action="grid-filter-apply" data-ui-id="widget-button-1">
+                                    <span>Search</span>
+                                </button>
+                                <button id="id_e818dc7a973209220f289fdf504eb0bd" title="Reset Filter" type="button"
+                                        class="action-default scalable action-reset action-tertiary"
+                                        data-action="grid-filter-reset"
+                                        data-ui-id="widget-button-0">
+                                    <span>Reset Filter</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="_massaction admin__data-grid-header-row">
+                            <div id="source_massaction" class="admin__grid-massaction">
+                                <form action="" id="source_massaction-form" method="post" novalidate="novalidate">
+                                    <div class="admin__grid-massaction-form">
+                                        <div><input name="form_key" type="hidden" value="MCH2yKffh5gUB8Zx"></div>
+                                        <select id="source_massaction-select"
+                                                class="required-entry local-validation admin__control-select "
+                                                data-ui-id="adminhtml-massaction-select">
+                                            <option class="admin__control-select-placeholder" value="" selected="">
+                                                Actions
+                                            </option>
+                                            <option value="disable">Delete</option>
+                                        </select>
+                                        <span class="outer-span" id="source_massaction-form-hiddens"></span>
+                                        <span class="outer-span" id="source_massaction-form-additional"></span>
+                                        <button id="id_ef831131cd11a84d1167b4947d5a6fbe" title="Submit" type="button"
+                                                class="action-default scalable"
+                                                data-ui-id="widget-button-2">
+                                            <span>Submit</span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="no-display">
+                                    <div id="source_massaction-item-disable-block"></div>
+                                </div>
+                                <div class="mass-select-wrap">
+                                    <select id="source_massaction-mass-select" class="action-select-multiselect"
+                                            data-menu="grid-mass-select">
+                                        <optgroup label="Mass Actions">
+                                            <option disabled="" selected=""></option>
+                                            <option value="selectAll">Select All</option>
+                                            <option value="unselectAll">Unselect All</option>
+                                            <option value="selectVisible">Select Visible</option>
+                                            <option value="unselectVisible">Unselect Visible</option>
+                                        </optgroup>
+                                    </select>
+                                    <label for="source_massaction-mass-select"></label>
+                                </div>
+                            </div>
+                            <div class="admin__control-support-text">
+                            <span id="source-total-count" data-ui-id="ordermanager-warehouse-source-grid-total-count">
+                                4                        </span>
+                                records found <span id="source_massaction-count" class="mass-select-info _empty"><strong
+                                            data-role="counter">0</strong> <span>selected</span></span>
+                            </div>
+                            <div class="admin__data-grid-pager-wrap">
+                                <select name="limit" id="source_page-limit"
+                                        data-ui-id="ordermanager-warehouse-source-grid-per-page"
+                                        class="admin__control-select">
+                                    <option value="20" selected="selected">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                </select>
+                                <label for="source_page-limit" class="admin__control-support-text">per page</label>
+                                <div class="admin__data-grid-pager">
+                                    <button type="button" class="action-previous disabled"><span>Previous page</span>
+                                    </button>
+                                    <input type="text" id="source_page-current" name="page" value="1"
+                                           class="admin__control-text"
+                                           data-ui-id="ordermanager-warehouse-source-grid-current-page">
+                                    <label class="admin__control-support-text" for="source_page-current">
+                                        of <span>1</span> </label>
+                                    <button type="button" class="action-next disabled"><span>Next page</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin__data-grid-wrap admin__data-grid-wrap-static">
+
+                        <table class="data-grid" id="source_table">
+                            <!-- Rendering column set -->
+                            <thead>
+                            <tr>
+                                <th class="data-grid-th" data-column="massaction">&nbsp;</th>
+                                <th data-sort="stock_id" data-direction="asc"
+                                    class="data-grid-th _sortable not-sort col-id col-stock_id"><span>ID</span></th>
+                                <th data-sort="stock_name" data-direction="asc"
+                                    class="data-grid-th _sortable not-sort col-id col-stock_name">
+                                    <span>Source</span>
+                                </th>
+                                <th class="data-grid-th col-actions last no-link col-action"><span>Action</span></th>
+                            </tr>
+                            <tr class="data-grid-filters" data-role="filter-form">
+                                <td data-column="massaction" class="col-select col-massaction">
+                                    <span class="head-massaction">
+                                        <select name="massaction" id="source_filter_massaction"
+                                              data-ui-id="widget-grid-column-filter-massaction-0-filter-massaction"
+                                              class="no-changes admin__control-select">
+                                            <option value="">Any</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </span>
+                                </td>
+                                <td data-column="stock_id" class="col-id col-stock_id">
+                                    <input type="text" name="stock_id" id="source_filter_stock_id" value=""
+                                           class="input-text admin__control-text no-changes"
+                                           data-ui-id="widget-grid-column-filter-text-0-filter-stock-id"></td>
+                                <td data-column="stock_name" class="col-id col-stock_name">
+                                    <input type="text" name="stock_name" id="source_filter_stock_name" value=""
+                                           class="input-text admin__control-text no-changes"
+                                           data-ui-id="widget-grid-column-filter-text-1-filter-stock-name"></td>
+                                <td data-column="action" class="col-actions last no-link col-action"></td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr data-role="row" class="even _clickable">
+                                <td data-column="massaction" class="col-select col-massaction data-grid-checkbox-cell ">
+                                    <label class="data-grid-checkbox-cell-inner" for="id_62">
+                                        <input type="checkbox"
+                                            name="ids" id="id_62"
+                                            data-role="select-row"
+                                            value="2"
+                                            class="admin__control-checkbox">
+                                        <label for="id_62"></label>
+                                    </label>
+                                </td>
+                                <td data-column="stock_id" class=" col-id col-stock_id">2</td>
+                                <td data-column="stock_name" class=" col-id col-stock_name">Advanced Source #1</td>
+                                <td data-column="action" class=" col-actions col-action last"><a href="#">Edit</a></td>
+                            </tr>
+                            <tr data-role="row" class="_clickable">
+                                <td data-column="massaction" class="col-select col-massaction data-grid-checkbox-cell ">
+                                    <label class="data-grid-checkbox-cell-inner" for="id_805">
+                                        <input type="checkbox"
+                                             name="ids" id="id_805"
+                                             data-role="select-row"
+                                             value="3"
+                                             class="admin__control-checkbox">
+                                        <label for="id_805"></label>
+                                    </label>
+                                </td>
+                                <td data-column="stock_id" class=" col-id col-stock_id">3</td>
+                                <td data-column="stock_name" class=" col-id col-stock_name">Advanced Source #2</td>
+                                <td data-column="action" class=" col-actions col-action last"><a href="#">Edit</a></td>
+                            </tr>
+                            <tr data-role="row" class="even _clickable">
+                                <td data-column="massaction" class="col-select col-massaction data-grid-checkbox-cell ">
+                                    <label class="data-grid-checkbox-cell-inner" for="id_522">
+                                        <input type="checkbox"
+                                             name="ids" id="id_522"
+                                             data-role="select-row"
+                                             value="6"
+                                             class="admin__control-checkbox">
+                                        <label for="id_522"></label>
+                                    </label>
+                                </td>
+                                <td data-column="stock_id" class=" col-id col-stock_id  ">4</td>
+                                <td data-column="stock_name" class=" col-id col-stock_name  ">Advanced Source #3</td>
+                                <td data-column="action" class=" col-actions col-action  last"><a href="#">Edit</a></td>
+                            </tr>
+                            <tr data-role="row" class="_clickable">
+                                <td data-column="massaction" class="col-select col-massaction data-grid-checkbox-cell ">
+                                    <label class="data-grid-checkbox-cell-inner" for="id_456">
+                                        <input type="checkbox"
+                                             name="ids" id="id_456"
+                                             data-role="select-row"
+                                             value="7"
+                                             class="admin__control-checkbox">
+                                        <label for="id_456"></label>
+                                    </label>
+                                </td>
+                                <td data-column="stock_id" class=" col-id col-stock_id">5</td>
+                                <td data-column="stock_name" class=" col-id col-stock_name">Advanced Source #4</td>
+                                <td data-column="action" class=" col-actions col-action last"><a href="#">Edit</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="iwd-lock-pro"></div>
+    <div class="iwd-unlock-pro iwd-upgrade-to-pro"><i class="fa fa-lock"></i><?php echo __('Unlock Pro') ?></div>
+</div>
+
+<script type="text/javascript">
+    // <![CDATA[
+    require(["IWD_OrderManager/js/upgrade"],
+        function(iwdOrderManagerUpgrade) {
+            var orderManagerUpgrade = new iwdOrderManagerUpgrade();
+            orderManagerUpgrade.init();
+        }
+    );
+    // ]]>
+</script>

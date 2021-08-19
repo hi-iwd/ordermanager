@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="IWD_OrderManager::catalog_warehouses_product" title="Manage Stocks For Product" module="IWD_OrderManager" sortOrder="100" parent="Magento_Catalog::inventory" action="iwdordermanager/warehouses_product/index" resource="IWD_OrderManager::iwdordermanager_warehouse"/>
+        <add id="IWD_OrderManager::catalog_warehouses" title="Manage Sources" module="IWD_OrderManager" sortOrder="101" parent="Magento_Catalog::inventory" action="iwdordermanager/warehouses/index" resource="IWD_OrderManager::iwdordermanager_warehouse"/>
+    </menu>
+</config>

@@ -1,0 +1,15 @@
+<div class="note-list-actions-buttons">
+    <?php if ($block->isAllowedAction('comments_edit')) : ?>
+    <a class="note-list-actions-update iwd-upgrade-to-pro" href="#" title="<?php echo __('Edit') ?>">
+        <i class="fa fa-2x fa-pencil"></i>
+    </a>
+    <?php endif; ?>
+
+    <?php if ($block->isAllowedAction('comments_delete')) : ?>
+    <a class="note-list-actions-delete iwd-upgrade-to-pro" href="#" title="<?php echo __('Delete') ?>">
+        <i class="fa fa-2x fa-trash-o"></i>
+    </a>
+    <?php endif; ?>
+</div>
+
+<div class="iwd-om-pre-loader hide"><i class="loader"></i></div>
