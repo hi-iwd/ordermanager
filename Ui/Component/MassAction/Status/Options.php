@@ -71,7 +71,7 @@ class Options implements JsonSerializable
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         if ($this->options === null) {
             $options = $this->statuses->toOptionArray();

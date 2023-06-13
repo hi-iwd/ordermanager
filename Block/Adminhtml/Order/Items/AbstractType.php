@@ -142,6 +142,11 @@ class AbstractType extends AbstractItems
     public function getPrice($priceType)
     {
         $price = $this->getOrderItem()->getData($priceType);
+
+        if(is_null($price)) {
+            $price = 0;
+        }
+
         return number_format($price, 2, '.', '');
     }
 
@@ -152,6 +157,11 @@ class AbstractType extends AbstractItems
     public function getPercent($percentType)
     {
         $percent = $this->getOrderItem()->getData($percentType);
+
+        if(is_null($percent)) {
+            $percent = 0;
+        }
+
         return number_format($percent, 2, '.', '');
     }
 

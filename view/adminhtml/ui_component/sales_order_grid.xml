@@ -37,7 +37,7 @@
                         <item name="label" xsi:type="string" translate="true">Change status</item>
                     </item>
                 </argument>
-                <settings  name="actions" xsi:type="configurableObject">
+                <settings>
                     <label translate="true">Change Status</label>
                     <actions class="IWD\OrderManager\Ui\Component\MassAction\Status\Options"/>
                 </settings>
