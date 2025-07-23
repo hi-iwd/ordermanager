@@ -123,8 +123,8 @@ class Quote extends \Magento\Quote\Model\Quote
         \Magento\Quote\Model\ShippingAssignmentFactory $shippingAssignmentFactory,
         \IWD\OrderManager\Model\Quote\Item $quoteItemObject,
         \Magento\Framework\ObjectManagerInterface $objectManager,
-        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
-        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        ?\Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        ?\Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         $this->objectManager = $objectManager;

@@ -55,8 +55,8 @@ class Invoice extends \Magento\Sales\Model\Order\Invoice
         ResourceConnection $appResourceConnection,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \IWD\OrderManager\Model\Creditmemo\Creditmemo $creditmemo,
-        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
-        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        ?\Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        ?\Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         parent::__construct(

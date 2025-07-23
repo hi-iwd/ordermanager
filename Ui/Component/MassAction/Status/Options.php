@@ -3,7 +3,7 @@
 namespace IWD\OrderManager\Ui\Component\MassAction\Status;
 
 use Magento\Framework\UrlInterface;
-use Zend\Stdlib\JsonSerializable;
+use \JsonSerializable;
 use IWD\OrderManager\Model\Config\Source\Order\Statuses;
 
 class Options implements JsonSerializable

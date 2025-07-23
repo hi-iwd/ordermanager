@@ -111,8 +111,8 @@ class Address extends AbstractModel
         \Magento\Sales\Model\Order\Address\Renderer $addressRenderer,
         \Magento\Directory\Model\RegionFactory $regionFactory,
         \Magento\Customer\Model\Address $customerAddress,
-        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
-        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        ?\Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        ?\Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         parent::__construct(
